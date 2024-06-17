@@ -1,0 +1,7 @@
+{
+  "name": "proppycontactlist-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
