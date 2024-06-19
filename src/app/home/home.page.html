@@ -1,20 +1,44 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Contact List</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <!-- Search Bar -->
+  <ion-searchbar (ionInput)="searchContacts($event)"></ion-searchbar>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- Contact list -->
+  <ion-list lines="full">
+    <ion-item *ngFor="let contact of filteredContacts">
+      <ion-avatar slot="start">
+        <img [src]="'assets/user.png'" alt="Avatar">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ contact.name }}</h2>
+        <p>{{ contact.phone_number }}</p>
+        <p>{{ contact.email }}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <!-- Add delete and update buttons here -->
+        <ion-button (click)="deleteContact(contact)">
+          <ion-icon name="trash" size="large" color="danger"></ion-icon>
+        </ion-button>
+        <ion-button (click)="updateContact(contact)" aria-label="Favorite">
+          <ion-icon name="create" size="large" class="update"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-item *ngIf="filteredContacts.length === 0" lines="none">
+      <ion-label class="not-found">No contacts found</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Floating action button -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addContact()">
+      <ion-icon name="add" size="large" class="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

@@ -1,0 +1,54 @@
+ion-title {
+    color: white;
+  }
+
+ion-toolbar {
+    --background: #2C284C;
+}
+    
+ion-back-button {
+    color: #FFFFFF;
+}
+
+.button-submit {
+    --background: #FFE02B;
+    color: #2C284C;
+    font-weight: bold; 
+    width: calc(100% - 32px); /* Adjust based on padding/margins */
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+ion-item.input-item {
+    --padding-start: 12px; /* Adjust left padding */
+    --padding-end: 12px; /* Adjust right padding */
+    --inner-padding-top: 8px; /* Adjust top padding for the input */
+  }
+  
+  .input-label {
+    font-size: 14px; /* Adjust label font size */
+    color: #757575; /* Adjust label color */
+  }
+  
+  .input-field {
+    font-size: 16px; /* Adjust input font size */
+    border-bottom: 1px solid #BDBDBD; /* Bottom border */
+    padding-top: var(--inner-padding-top); /* Use variable for consistent padding */
+  }
+  
+  
+  ion-content {
+    height: calc(100% - 56px); /* Adjust based on header and footer height */
+    overflow: auto; /* Ensure content can scroll if needed */
+  }
+  
+  ion-footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+  }
+  
+
+  
+
+
+  

@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="home()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none" class="input-item">
+    <ion-label position="floating" class="input-label">Name</ion-label>
+    <ion-input type="text" class="input-field" [(ngModel)]="name" ></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="input-item">
+    <ion-label position="floating" class="input-label">Phone</ion-label>
+    <ion-input type="tel" class="input-field" [(ngModel)]="phone_number" ></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="input-item">
+    <ion-label position="floating" class="input-label">Email</ion-label>
+    <ion-input type="email" class="input-field" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-footer class="ion-no-border">
+    <ion-button expand="block" class="button-submit" (click)="updateContact()">Update Contact</ion-button>
+  </ion-footer>
+</ion-content>
